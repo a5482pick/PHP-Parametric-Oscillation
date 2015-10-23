@@ -1,0 +1,81 @@
+#form1  {
+   position : absolute;
+   top : 5%;
+   left : 10%;
+   height : 30%;
+}
+
+input[type=text]  {
+   text-align : center;
+}
+
+input[name=m1]  {
+   position : absolute;
+   top : 60%;
+   left : 42%;
+}
+
+input[name=m2]   {
+   position : absolute;
+   top : 80%;
+   left : 42%;
+}
+
+#canvasOne   {
+   position : absolute;
+   top : 5%;
+   left : 50%;
+}
+
+#eigenWrapper  {
+   position : absolute;
+   top : 60%;
+   left : 10%;
+   height : 35%;
+   font-style : oblique;
+   color : blue;
+   width : 20%;
+}
+
+#omega1  {
+   position : absolute;
+   top : 15%;
+}
+
+#omega2  {
+   position : absolute;
+   top : 30%;
+}
+
+#eigen1  {
+   position : absolute;
+   top : 45%;
+}
+
+#eigen2  {
+   position : absolute;
+   top : 60%;
+}
+
+#popout1   {           /*Popout invites user to change parameters.*/
+   visibility : hidden;
+   position : absolute;
+   right : -70%;
+   top : 1%;
+   background-color : #FFFFFF;
+   padding : 1%;
+   border-radius : 20%;
+   font : 1.2vw;
+   font-style : italic;
+   text-align : center;
+   -webkit-transition: background-color 2s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 2s, padding-bottom 2s, padding-top 0.5s;
+}
+
+
+#form1:hover #popout1   {
+   visibility : visible;
+   background-color : #00FFFF;
+   padding-bottom : 20%;
+   padding-top : 20%;
+}
