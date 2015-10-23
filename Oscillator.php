@@ -164,18 +164,20 @@ function drawParametric()   {
 <canvas id="canvasOne" width="550" height="550"></canvas>
 
 <form id="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" autocomplete="off"> 
-    Spring constant k1: <input type="text" name="k1" value="1">
-    <br><br>
-    Spring constant k2: <input type="text" name="k2" value="1">
-    <br><br>
-    Spring constant k3: <input type="text" name="k3" value="1">
-    <br><br>
-    Mass m1: <input type="text" name="m1" value="1">
-    <br><br>
-    Mass m2: <input type="text" name="m2" value="1">
-    <br><br>
+    <div id="util1">
+        Spring constant k1: <input type="text" name="k1" value="1">
+        <br><br>
+        Spring constant k2: <input type="text" name="k2" value="1">
+        <br><br>
+        Spring constant k3: <input type="text" name="k3" value="1">
+        <br><br>
+        Mass m1: <input type="text" name="m1" value="1">
+        <br><br>
+        Mass m2: <input type="text" name="m2" value="1">
+        <br><br>
+        <div id="popout1">Feel free to try different values.  (NOTE: There is a small time delay after submitting.)</div>
+    </div>
     <input type="submit" name="submit" value="Submit"> 
-    <div id="popout1">Please choose your own values.</div>
 </form>
 
 <div id="eigenWrapper">

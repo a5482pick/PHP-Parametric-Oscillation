@@ -60,7 +60,8 @@ input[name=m2]   {
 #popout1   {           /*Popout invites user to change parameters.*/
    visibility : hidden;
    position : absolute;
-   right : -70%;
+   right : -73%;
+   width : 69%;
    top : 1%;
    background-color : #FFFFFF;
    padding : 1%;
