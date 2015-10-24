@@ -1,12 +1,26 @@
-#form1  {
-   position : absolute;
-   top : 3em;
-   left : 3em;
-   height : 10em;
-   width : 18em;
+#p1   {
+   font-size : 1.4em;
+   width : 100%;
+   text-align : center;
+   color : blue;
 }
 
-input[type=text]  {
+#p2   {
+   position : absolute;
+   font-size : 1.1em;
+   top : 3.8em;
+   font-style : italic;
+}
+
+#form1  {
+   position : absolute;
+   top : 9em;
+   right : 20%;
+   height : 10em;
+   width : 60%;
+}
+
+input[type=text]  {         /*The input boxes that hold the 5 chosen parameters.*/
    text-align : center;
 }
 
@@ -42,61 +56,65 @@ input[name=m2]   {
 
 #canvasOne   {
    position : absolute;
-   top : 35.8em;
-   left : 3em;
+   top : 42.8em;
+   left : 20%;
 }
 
-#eigenWrapper  {
+#eigenWrapper  {         /*A wrapper for the four calculated values that are to be displayed.*/
    position : absolute;
-   top : 25.8em;
-   left : 3em;
+   top : 24.8em;
+   right : 20%;
    font-style : oblique;
    color : blue;
    height  : 10em;
-   width : 20em;
+   width : 60%;
 }
 
-#omega1  {
+#values   {
    position : absolute;
    top : 1em;
 }
 
-#omega2  {
+#omega1  {
    position : absolute;
    top : 3em;
 }
 
-#eigen1  {
+#omega2  {
    position : absolute;
    top : 5em;
 }
 
-#eigen2  {
+#eigen1  {
    position : absolute;
    top : 7em;
 }
 
+#eigen2  {
+   position : absolute;
+   top : 9em;
+}
+
 #popout1   {           /*Popout invites user to change parameters.*/
    visibility : hidden;
+   opacity : 0.6;
    position : absolute;
    right : 0em;
    width : 10em;
    top : 11.4em;
    background-color : #FFFFFF;
-   padding : 0.8em;
-   border-radius : 20%;
+   border-radius : 7.5%;
+   padding : 1%;
    font : 0.7em;
    font-style : italic;
    text-align : center;
-   -webkit-transition: background-color 2s; /* For Safari 3.1 to 6.0 */
-    transition: background-color 2s, padding-bottom 2s, padding-top 0.5s;
+   -webkit-transition: background-color 4s; /* For Safari 3.1 to 6.0 */
+   transition: background-color 4s;
 }
 
 
 #form1:hover #popout1   {
    visibility : visible;
    background-color : #00FFFF;
-   padding-bottom : 3em;
-   padding-top : 3em;
 }
 

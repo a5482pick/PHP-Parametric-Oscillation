@@ -94,17 +94,21 @@ function drawParametric()   {
     canvasOne = document.getElementById("canvasOne");
 
     //Choose the appropriate stylesheet for the given window dimensions.
-    if (window.innerWidth < 700)  {
+    if (window.innerWidth < 670)  {
+    
+        //The canvas repositions itself to the bottom of the screen.
         document.getElementById('bigScreen').disabled  = true;
         document.getElementById('smallScreen').disabled = false;
         canvasOne.width = 300;
         canvasOne.height = 300;
     }
     else  {
+        
+        //Allow the canvas to resize and fill more of the screen.
         document.getElementById('bigScreen').disabled  = false;
         document.getElementById('smallScreen').disabled = true;
-        canvasOne.width = 500;
-        canvasOne.height = 500;
+        canvasOne.width = 470 * window.innerWidth/1366;
+        canvasOne.height = 470 * window.innerWidth/1366;
     }
     
     //Set up the canvas.
@@ -112,7 +116,7 @@ function drawParametric()   {
 
     contextOne.fillStyle ='#FFFFFF';
     contextOne.fillRect(0,0,canvasOne.width,canvasOne.height);
-    contextOne.strokeStyle = '#000000';
+    contextOne.strokeStyle = '#808080';
     contextOne.strokeRect(1,1,canvasOne.width-2,canvasOne.height-2);
    
     contextOne.beginPath();
@@ -127,19 +131,6 @@ function drawParametric()   {
     contextOne.lineTo(canvasOne.width,canvasOne.height/2);
     contextOne.strokeStyle = "#00FF00";
     contextOne.stroke();
-   
-    contextOne.font = "12px serif";
-    contextOne.fillStyle = "#000000";
-    contextOne.fillText("mass 1", canvasOne.width/4, (canvasOne.height/2) - 5);
-   
-    contextOne.font = "12px serif";
-    contextOne.fillStyle = "#000000";
-    contextOne.fillText("mass 2", (canvasOne.width/2)+5,canvasOne.height * (1/8));
-    
-    contextOne.font = "12px serif";
-    contextOne.fillStyle = "#000000";
-    contextOne.fillText("A parametric plot of the",canvasOne.width/20,canvasOne.height/20);
-    contextOne.fillText("amplitudes of the masses.", canvasOne.width/20,canvasOne.height/13);
    
     time = 0;
    
@@ -156,7 +147,7 @@ function drawParametric()   {
         //The points are of colour red.
         for (i = 0; i < graph3.data.length; i += 4) {
       
-            graph3.data[i+0] = 0;
+            graph3.data[i+0] = 255;
             graph3.data[i+1] = 0;
             graph3.data[i+2] = 0;
             graph3.data[i+3] = 255;
@@ -170,17 +161,23 @@ function drawParametric()   {
         time =  time + 0.001;
     }    
     
+    //Notify the user of various values.
+    document.getElementById("values").innerHTML = "Your submitted values were:    <?php echo $k1, ", ", $k2, ", ". $k3, ", ", $m1, ", ", $m2 ?>.";
     document.getElementById("omega1").innerHTML = "The first 'eigenfrequency' is:    <?php echo round($eigen[0],2) ?>.";
     document.getElementById("omega2").innerHTML = "The second 'eigenfrequency' is:    <?php echo round($eigen[1],2) ?>.";
     document.getElementById("eigen1").innerHTML = "The first 'eigenvector' is:    [<?php echo round($eigen[2],2) ?>,1].";
     document.getElementById("eigen2").innerHTML = "The second 'eigenvector' is:    [<?php echo round($eigen[3],2) ?>,1].";
 }
 </script>
+
 </head>
 
 <body>
 
-<canvas id="canvasOne" width="550" height="550"></canvas>
+<canvas id="canvasOne"></canvas>
+
+<p id="p1"> A Parametric Plot Of The Motion Of Two Masses Connected By Three Springs.</p>
+<p id="p2">The two axes correspond to the two masses.  Time evolves along the curve.</p>
 
 <form id="form1" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" autocomplete="off"> 
     <div id="util1">
@@ -200,6 +197,7 @@ function drawParametric()   {
 </form>
 
 <div id="eigenWrapper">
+    <div id="values"></div>
     <div id="omega1"></div>
     <div id="omega2"></div>
     <div id="eigen1"></div>
