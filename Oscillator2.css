@@ -42,13 +42,13 @@ input[name=m2]   {
 
 #canvasOne   {
    position : absolute;
-   top : 5%;
-   left : 50%;
+   top : 35.8em;
+   left : 3em;
 }
 
 #eigenWrapper  {
    position : absolute;
-   top : 25em;
+   top : 25.8em;
    left : 3em;
    font-style : oblique;
    color : blue;
@@ -58,34 +58,34 @@ input[name=m2]   {
 
 #omega1  {
    position : absolute;
-   top : 15%;
+   top : 1em;
 }
 
 #omega2  {
    position : absolute;
-   top : 30%;
+   top : 3em;
 }
 
 #eigen1  {
    position : absolute;
-   top : 45%;
+   top : 5em;
 }
 
 #eigen2  {
    position : absolute;
-   top : 60%;
+   top : 7em;
 }
 
 #popout1   {           /*Popout invites user to change parameters.*/
    visibility : hidden;
    position : absolute;
-   right : -18em;
-   width : 16em;
-   top : 1em;
+   right : 0em;
+   width : 10em;
+   top : 11.4em;
    background-color : #FFFFFF;
-   padding : 1em;
+   padding : 0.8em;
    border-radius : 20%;
-   font : 1em;
+   font : 0.7em;
    font-style : italic;
    text-align : center;
    -webkit-transition: background-color 2s; /* For Safari 3.1 to 6.0 */
@@ -96,6 +96,7 @@ input[name=m2]   {
 #form1:hover #popout1   {
    visibility : visible;
    background-color : #00FFFF;
-   padding-bottom : 4em;
-   padding-top : 4em;
+   padding-bottom : 3em;
+   padding-top : 3em;
 }
+

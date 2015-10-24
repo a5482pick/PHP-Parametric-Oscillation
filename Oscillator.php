@@ -80,15 +80,34 @@ $a = $initialDisp / ($eigen[2] - $eigen[3]);
 
 <html>
 <head>
-<link rel="stylesheet" href="Oscillator.css" type="text/css">
+<link rel="stylesheet" href="Oscillator.css" id="bigScreen" type="text/css">
+<link rel="stylesheet" href="Oscillator2.css" id="smallScreen" type="text/css">
 <script>
 
+window.addEventListener("resize", drawParametric, false);
 window.addEventListener("load", drawParametric, false);
+    
 
 //Draw a graph of the combined motions.
 function drawParametric()   {
    
     canvasOne = document.getElementById("canvasOne");
+
+    //Choose the appropriate stylesheet for the given window dimensions.
+    if (window.innerWidth < 700)  {
+        document.getElementById('bigScreen').disabled  = true;
+        document.getElementById('smallScreen').disabled = false;
+        canvasOne.width = 300;
+        canvasOne.height = 300;
+    }
+    else  {
+        document.getElementById('bigScreen').disabled  = false;
+        document.getElementById('smallScreen').disabled = true;
+        canvasOne.width = 500;
+        canvasOne.height = 500;
+    }
+    
+    //Set up the canvas.
     contextOne = canvasOne.getContext("2d");
 
     contextOne.fillStyle ='#FFFFFF';
