@@ -80,8 +80,8 @@ $a = $initialDisp / ($eigen[2] - $eigen[3]);
 
 <html>
 <head>
-<link rel="stylesheet" href="Oscillator.css" id="bigScreen" type="text/css">
-<link rel="stylesheet" href="Oscillator2.css" id="smallScreen" type="text/css">
+<link rel='stylesheet' media='screen and (min-width: 670px)' href='Oscillator.css' />
+<link rel='stylesheet' media='screen and (max-width: 669px)' href='Oscillator2.css' />
 <script>
 
 window.addEventListener("resize", drawParametric, false);
@@ -96,17 +96,12 @@ function drawParametric()   {
     //Choose the appropriate stylesheet for the given window dimensions.
     if (window.innerWidth < 670)  {
     
-        //The canvas repositions itself to the bottom of the screen.
-        document.getElementById('bigScreen').disabled  = true;
-        document.getElementById('smallScreen').disabled = false;
         canvasOne.width = 300;
         canvasOne.height = 300;
     }
     else  {
         
         //Allow the canvas to resize and fill more of the screen.
-        document.getElementById('bigScreen').disabled  = false;
-        document.getElementById('smallScreen').disabled = true;
         canvasOne.width = 470 * window.innerWidth/1366;
         canvasOne.height = 470 * window.innerWidth/1366;
     }

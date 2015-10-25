@@ -56,8 +56,9 @@ input[name=m2]   {
 
 #canvasOne   {
    position : absolute;
-   top : 42.8em;
+   top : 38.8em;
    left : 20%;
+   margin-bottom : 3em;
 }
 
 #eigenWrapper  {         /*A wrapper for the four calculated values that are to be displayed.*/

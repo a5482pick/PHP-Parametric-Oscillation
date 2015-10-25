@@ -1,2 +1,2 @@
-The motion of a system with two masses and three springs is plotted.  The (x,y) coordinates give the position of mass 1 and mass 2 respectively, when time advances along the plotted line.  
+The motion of a system with two masses and three springs is plotted.  The (x,y) coordinates give the position of mass 1 and mass 2 respectively, when time advances along the plotted line.  The canvas automatically resizes and reappears when the window is resized, and the canvas is repositioned when the window is below a particular size.
 See repository 'coupled-oscillators-analytic' for an animated visualisation.
