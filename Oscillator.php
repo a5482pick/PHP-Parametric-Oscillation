@@ -83,11 +83,17 @@ $a = $initialDisp / ($eigen[2] - $eigen[3]);
 <link rel='stylesheet' media='screen and (min-width: 670px)' href='Oscillator.css' />
 <link rel='stylesheet' media='screen and (max-width: 669px)' href='Oscillator2.css' />
 <script>
-
+"use strict";
 window.addEventListener("resize", drawParametric, false);
 window.addEventListener("load", drawParametric, false);
     
+var canvasOne, contextOne, time, z1, z2, graph, dataObject, dataArray;
 
+//This array will store all the graph's data.  It's added for 
+//completeness but is not used in this implementation.
+dataObject = [];
+
+   
 //Draw a graph of the combined motions.
 function drawParametric()   {
    
@@ -128,33 +134,43 @@ function drawParametric()   {
     contextOne.stroke();
    
     time = 0;
-   
+    
+    
     //Gather data points for the set amount of time.
     while (time < 100) {
-     
-    //z1 is the parametric motion of mass 1.  z2 is the parametric motion of mass 2.
+      
+        //z1 is the parametric motion of mass 1.  z2 is the parametric motion of mass 2.
         z1 = <?php echo $a ?>*<?php echo $eigen[2] ?>*Math.cos(<?php echo $eigen[0] ?>*time) - <?php echo $a ?>*<?php echo $eigen[3] ?>*Math.cos(<?php echo $eigen[1] ?>*time); 
         z2 = <?php echo $a ?>*Math.cos(<?php echo $eigen[0] ?>*time) - <?php echo $a ?>*Math.cos(<?php echo $eigen[1] ?>*time);
      
         //The graph points are 1 pixel
-        graph3 = contextOne.createImageData(1,1); 
+        graph = contextOne.createImageData(1,1); 
         
         //The points are of colour red.
-        for (i = 0; i < graph3.data.length; i += 4) {
+        for (var i = 0; i < graph.data.length; i += 4) {
       
-            graph3.data[i+0] = 255;
-            graph3.data[i+1] = 0;
-            graph3.data[i+2] = 0;
-            graph3.data[i+3] = 255;
+            graph.data[i+0] = 255;
+            graph.data[i+1] = 0;
+            graph.data[i+2] = 0;
+            graph.data[i+3] = 255;
         }
         
         //Plot (z1,z2) as the (x,y) components on the canvas graph.
         z1 = z1*(canvasOne.height/(2*<?php echo $initialDisp ?>)) + (canvasOne.height/2);
         z2 = z2*(canvasOne.width/(2*<?php echo $initialDisp ?>)) + (canvasOne.width/2);
-        contextOne.putImageData(graph3, z1, z2);
-    
+        contextOne.putImageData(graph, z1, z2);
+        
+        //The following five lines store the graph data.  They are not used,
+        //but could be of use if other information is to be extracted.    
+        dataArray = []; 
+        dataArray[0] = time;
+        dataArray[1] = z1;
+        dataArray[2] = z2;
+        dataObject.push(dataArray);  //Create 2d array i.e. array of data point sets.
+        
         time =  time + 0.001;
-    }    
+    }   
+    
     
     //Notify the user of various values.
     document.getElementById("values").innerHTML = "Your submitted values were:    <?php echo $k1, ", ", $k2, ", ". $k3, ", ", $m1, ", ", $m2 ?>.";
