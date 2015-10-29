@@ -1,11 +1,11 @@
-#p1   {
+#p1   {               /*The heading.*/
    font-size : 1.4em;
    width : 100%;
    text-align : center;
    color : blue;
 }
 
-#p2   {
+#p2   {          /*The information in italics.*/
    position : absolute;
    font-size : 1.1em;
    top : 3.8em;

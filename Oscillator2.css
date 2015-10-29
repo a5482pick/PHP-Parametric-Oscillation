@@ -1,23 +1,23 @@
-#p1   {
+#p1   {            /*The heading.*/
    font-size : 1.4em;
    width : 100%;
    text-align : center;
    color : blue;
 }
 
-#p2   {
+#p2   {            /*The information in italics.*/
    position : absolute;
    font-size : 1.1em;
-   top : 3.8em;
+   top : 6.0em;
    font-style : italic;
 }
 
 #form1  {
    position : absolute;
-   top : 9em;
-   right : 20%;
+   top : 11.8em;
+   right : 15%;
    height : 10em;
-   width : 60%;
+   width : 70%;
 }
 
 input[type=text]  {         /*The input boxes that hold the 5 chosen parameters.*/
@@ -56,19 +56,19 @@ input[name=m2]   {
 
 #canvasOne   {
    position : absolute;
-   top : 38.8em;
-   left : 20%;
+   top : 39.6em;
+   left : 10%;
    margin-bottom : 3em;
 }
 
 #eigenWrapper  {         /*A wrapper for the four calculated values that are to be displayed.*/
    position : absolute;
-   top : 24.8em;
-   right : 20%;
+   top : 27.5em;
+   right : 10%;
    font-style : oblique;
    color : blue;
    height  : 10em;
-   width : 60%;
+   width : 80%;
 }
 
 #values   {
