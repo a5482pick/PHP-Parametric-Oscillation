@@ -4,6 +4,5 @@ See repository 'coupled-oscillators-analytic' for an animated visualisation of w
 
 --------------------
 
-(Two arrays to store the data points have been added.  Remove the 5 storage lines to speed the calculation up a bit if you won't be using them.)
+(The calculation takes several seconds to perform. &nbsp; Two arrays to store the data points have been added: remove the 5 storage lines to speed the calculation up a bit if you won't be using them.)
 
-EDIT: Animation is apparently currently no longer smooth on Chrome on at least some systems. &nbsp; This is rectified by reducing the window size. &nbsp; Firefox seems OK still.
