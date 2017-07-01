@@ -4,5 +4,5 @@ See repository 'coupled-oscillators-analytic' for an animated visualisation of w
 
 --------------------
 
-(The calculation takes several seconds to perform. &nbsp; Two arrays to store the data points have been added: remove the 5 storage lines to speed the calculation up a bit if you won't be using them.)
+The calculation takes several seconds to perform, so a little patience is required after you submit your values. &nbsp;(Interestingly, the calculation is much faster on Firefox.) &nbsp; Two arrays to store the data points have been added: remove the 5 storage lines to speed the calculation up a bit if you won't be using them.
 
